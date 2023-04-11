@@ -19,7 +19,7 @@ const SidebarTweetButton = () => {
   }, [loginModal, router, currentUser]);
 
   return (
-    <div onClick={onClick} className=''>
+    <div onClick={onClick}>
       <div
         className='
         mt-6
@@ -40,8 +40,9 @@ const SidebarTweetButton = () => {
       >
         <FaFeather size={24} color='white' />
       </div>
-      <div
-        className='
+      <div className='px-5'>
+        <div
+          className='
         mt-6
         hidden 
         lg:block 
@@ -52,9 +53,9 @@ const SidebarTweetButton = () => {
         hover:bg-opacity-90 
         cursor-pointer
       '
-      >
-        <p
-          className='
+        >
+          <p
+            className='
             hidden 
             lg:block 
             text-center
@@ -62,9 +63,10 @@ const SidebarTweetButton = () => {
             text-white 
             text-[20px]
         '
-        >
-          Tweet
-        </p>
+          >
+            Tweet
+          </p>
+        </div>
       </div>
     </div>
   );
