@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { IconType } from "react-icons";
+import { IconType } from 'react-icons';
 import { useRouter } from 'next/router';
 
 import useLoginModal from '@/hooks/useLoginModal';
@@ -15,7 +15,14 @@ interface SidebarItemProps {
   alert?: boolean;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({ label, icon: Icon, href, auth, onClick, alert }) => {
+const SidebarItem: React.FC<SidebarItemProps> = ({
+  label,
+  icon: Icon,
+  href,
+  auth,
+  onClick,
+  alert,
+}) => {
   const router = useRouter();
   const loginModal = useLoginModal();
 
@@ -34,8 +41,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ label, icon: Icon, href, auth
   }, [router, href, auth, loginModal, onClick, currentUser]);
 
   return (
-    <div onClick={handleClick} className="flex flex-row items-center">
-      <div className="
+    <div onClick={handleClick} className='flex flex-row items-center'>
+      <div
+        className='
         relative
         rounded-full 
         h-14
@@ -48,11 +56,15 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ label, icon: Icon, href, auth
         hover:bg-opacity-10 
         cursor-pointer 
         lg:hidden
-      ">
-        <Icon size={28} color="white" />
-        {alert ? <BsDot className="text-sky-500 absolute -top-4 left-0" size={70} /> : null}
+      '
+      >
+        <Icon size={17} color='white' />
+        {alert ? (
+          <BsDot className='text-sky-500 absolute -top-4 left-0' size={70} />
+        ) : null}
       </div>
-      <div className="
+      <div
+        className='
         relative
         hidden 
         lg:flex 
@@ -64,15 +76,16 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ label, icon: Icon, href, auth
         hover:bg-opacity-10 
         cursor-pointer
         items-center
-      ">
-        <Icon size={24} color="white" />
-        <p className="hidden lg:block text-white text-xl">
-          {label}
-        </p>
-        {alert ? <BsDot className="text-sky-500 absolute -top-4 left-0" size={70} /> : null}
+      '
+      >
+        <Icon size={24} color='white' />
+        <p className='hidden lg:block text-white text-xl'>{label}</p>
+        {alert ? (
+          <BsDot className='text-sky-500 absolute -top-4 left-0' size={70} />
+        ) : null}
       </div>
     </div>
   );
-}
+};
 
 export default SidebarItem;

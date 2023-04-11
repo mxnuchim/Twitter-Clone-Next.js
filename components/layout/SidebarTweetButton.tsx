@@ -1,9 +1,9 @@
-import { useCallback } from "react";
-import { FaFeather } from "react-icons/fa";
-import { useRouter } from "next/router";
+import { useCallback } from 'react';
+import { FaFeather } from 'react-icons/fa';
+import { useRouter } from 'next/router';
 
-import useLoginModal from "@/hooks/useLoginModal";
-import useCurrentUser from "@/hooks/useCurrentUser";
+import useLoginModal from '@/hooks/useLoginModal';
+import useCurrentUser from '@/hooks/useCurrentUser';
 
 const SidebarTweetButton = () => {
   const router = useRouter();
@@ -19,13 +19,14 @@ const SidebarTweetButton = () => {
   }, [loginModal, router, currentUser]);
 
   return (
-    <div onClick={onClick}>
-      <div className="
+    <div onClick={onClick} className=''>
+      <div
+        className='
         mt-6
         lg:hidden 
         rounded-full 
-        h-14
-        w-14
+        h-11
+        w-11
         p-4
         flex
         items-center
@@ -34,10 +35,13 @@ const SidebarTweetButton = () => {
         hover:bg-opacity-80 
         transition 
         cursor-pointer
-      ">
-        <FaFeather size={24} color="white" />
+        mx-auto
+      '
+      >
+        <FaFeather size={24} color='white' />
       </div>
-      <div className="
+      <div
+        className='
         mt-6
         hidden 
         lg:block 
@@ -47,16 +51,18 @@ const SidebarTweetButton = () => {
         bg-sky-500
         hover:bg-opacity-90 
         cursor-pointer
-      ">
-        <p 
-          className="
+      '
+      >
+        <p
+          className='
             hidden 
             lg:block 
             text-center
             font-semibold
             text-white 
             text-[20px]
-        ">
+        '
+        >
           Tweet
         </p>
       </div>
